@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="static/basic.css" rel="stylesheet">
+    <title>Used Car App</title>
+</head>
+<body>
+  <font style="font-family: 'Montserrat',sans_serif" color="#f2af43">
+    <h1>Welcome to Used Car Price Prediction App! </h1>
+    <h3>
+    <form action="/" method="post">
+      <body>
+        <div style = "color:#ffffff">
+          <p>
+            <hr/>
+              <i>Please enter the parameters of the car you wish to purchase:</i>
+          </p>
+          Mileage
+          <input type="text" name="mileage">
+          <br>
+          Manufacture Year
+          <input type="text" name="manufacture_year">
+          <br>
+          Engine Displacement
+          <input type="text" name="engine_displacement">
+          <br>
+          Engine Power
+          <input type="text" name="engine_power">
+          <br>
+          Body Type
+          <select name="body type">
+          <option value="compact" selected>compact</option>
+          <option value="convertible">convertible</option>
+          <option value="coupe">coupe</option>
+          <option value="offroad">offroad</option>
+          <option value="other">other</option>
+          <option value="sedan">sedan</option>
+          <option value="stationwagon">stationwagon</option>
+          <option value="transporter">transporter</option>
+          <option value="van">van</option>
+          </select>
+          <br>
+          Door Count
+          <input type="text" name="door_count">
+          <br>
+          Seat Count
+          <input type="text" name="seat_count">
+          <br>
+          Fuel Type
+          <select name="fuel type">
+          <option value="gasoline" selected>gasoline</option>
+          <option value="cng">cng</option>
+          <option value="diesel">diesel</option>
+          <option value="electric">electric</option>
+          <option value="lpg">lpg</option>
+          </select>
+          <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>     
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </body>
+      <button id="button" type="submit">Click to get the Price!</button>
+      </form>    
+    <script src="static/index.js"></script>
+  </h3>
+  </font>
+</body>
+</html>

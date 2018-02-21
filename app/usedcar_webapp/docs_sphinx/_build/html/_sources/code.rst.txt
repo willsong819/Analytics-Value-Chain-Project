@@ -1,0 +1,14 @@
+Welcome to Will Song's usedcar_webapp's documentation!22
+==========================================
+
+.. toctree::
+   :maxdepth: 12
+   :caption: Contents:
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

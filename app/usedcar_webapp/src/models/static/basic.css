@@ -1,0 +1,44 @@
+body
+	h1{	
+		color: #a1a5a8;
+		font-size: 50px;
+		background-color:#fff;
+		max-width: 1150px;
+		margin-top:0cm;
+  		border:0cm solid #fff;
+
+	}
+
+body{
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(http://cars.mclaren.com/files/live/sites/mclaren/files/cars-mclaren-com-Main/McLaren%20Model%20Section/570S-Spider/HEADER_L_570S_Spider_RearView.jpg?t=w1440);
+  background-repeat: no-repeat;
+  background-attachment: fixed !important;
+  background-size: 100% !important;
+  background-position: center top !important;
+  padding: 1rem;
+  padding-top: 20%;
+  color: #fff;
+}
+
+#button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:#3e8e41;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#button:hover {background-color: #f4511e}
+
+#button:active {
+  background-color: #f4511e;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
