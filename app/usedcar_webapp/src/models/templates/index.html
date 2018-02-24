@@ -7,14 +7,15 @@
     <title>Used Car App</title>
 </head>
 <body>
-  <font style="font-family: 'Montserrat',sans_serif" color="#f2af43">
+  <font style="font-family: 'Montserrat',sans_serif" color="#ffffff">
     <h1>Welcome to Used Car Price Prediction App! </h1>
     <h3>
     <form action="/" method="post">
       <body>
-        <div style = "color:#ffffff">
           <p>
             <hr/>
+              <i>This app helps predict used car prices in Germany and Czech Republic's market</i>
+              <br>
               <i>Please enter the parameters of the car you wish to purchase:</i>
           </p>
           Mileage
@@ -31,7 +32,8 @@
           <br>
           Body Type
           <select name="body type">
-          <option value="compact" selected>compact</option>
+          <option value="select-one" selected>Select one:</option>
+          <option value="compact">compact</option>
           <option value="convertible">convertible</option>
           <option value="coupe">coupe</option>
           <option value="offroad">offroad</option>
@@ -50,18 +52,19 @@
           <br>
           Fuel Type
           <select name="fuel type">
-          <option value="gasoline" selected>gasoline</option>
+          <option value="select-one" selected>Select one:</option>
+          <option value="gasoline">gasoline</option>
           <option value="cng">cng</option>
           <option value="diesel">diesel</option>
           <option value="electric">electric</option>
           <option value="lpg">lpg</option>
           </select>
           <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>     
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br>
+          <br>
+          <button id="button" type="submit">Click to get the Price!</button>
+          <h2><i>{{price}}</i></h2>
       </body>
-      <button id="button" type="submit">Click to get the Price!</button>
       </form>    
     <script src="static/index.js"></script>
   </h3>
