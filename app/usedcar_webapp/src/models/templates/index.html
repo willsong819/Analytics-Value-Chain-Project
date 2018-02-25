@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="static/basic.css" rel="stylesheet">
+    <title>Used Car App</title>
+</head>
+<body>
+  <font style="font-family: 'Montserrat',sans_serif" color="#ffffff">
+    <h1>Welcome to Used Car Price Prediction App! </h1>
+    <h3>
+    <form action="/" method="post">
+      <body>
+          <p>
+            <hr/>
+              <i>This app helps predict used car prices in Germany and Czech Republic's market</i>
+              <br>
+              <i>Please enter the parameters of the car you wish to purchase:</i>
+          </p>
+          Mileage
+          <input type="text" name="mileage">
+          <br>
+          Manufacture Year
+          <input type="text" name="manufacture_year">
+          <br>
+          Engine Displacement
+          <input type="text" name="engine_displacement">
+          <br>
+          Engine Power
+          <input type="text" name="engine_power">
+          <br>
+          Body Type
+          <select name="body type">
+          <option value="select-one" selected>Select one:</option>
+          <option value="compact">compact</option>
+          <option value="convertible">convertible</option>
+          <option value="coupe">coupe</option>
+          <option value="offroad">offroad</option>
+          <option value="other">other</option>
+          <option value="sedan">sedan</option>
+          <option value="stationwagon">stationwagon</option>
+          <option value="transporter">transporter</option>
+          <option value="van">van</option>
+          </select>
+          <br>
+          Door Count
+          <input type="text" name="door_count">
+          <br>
+          Seat Count
+          <input type="text" name="seat_count">
+          <br>
+          Fuel Type
+          <select name="fuel type">
+          <option value="select-one" selected>Select one:</option>
+          <option value="gasoline">gasoline</option>
+          <option value="cng">cng</option>
+          <option value="diesel">diesel</option>
+          <option value="electric">electric</option>
+          <option value="lpg">lpg</option>
+          </select>
+          <br>
+          <br>
+          <br>
+          <button id="button" type="submit">Click to get the Price!</button>
+          <h2><i>{{price}}</i></h2>
+      </body>
+      </form>    
+    <script src="static/index.js"></script>
+  </h3>
+  </font>
+</body>
+</html>
