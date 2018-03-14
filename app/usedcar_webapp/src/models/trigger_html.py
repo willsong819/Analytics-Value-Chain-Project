@@ -23,6 +23,6 @@ def model():
   return render_template("index.html",price=pred)
   
 if __name__ == '__main__':
-	app.run()
+	app.run(host='0.0.0.0')
 
 
