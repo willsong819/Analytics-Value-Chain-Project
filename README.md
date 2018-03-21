@@ -49,5 +49,14 @@ Project Organization
     │       └── training_model.py
     │   
     │
+    
+   
+Link to download the data
+------------
+https://www.kaggle.com/mirosval/personal-cars-classifieds/data
+
+
+Link to Pivotal Tracker
+------------
 
 
