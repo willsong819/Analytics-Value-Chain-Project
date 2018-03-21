@@ -47,7 +47,7 @@ Project Organization
     │   ├── models         <- Scripts to clean the data and train the model
     │       ├── initial_cleaning.py
     │       └── training_model.py
-    │   
+    │    
     │
 
 

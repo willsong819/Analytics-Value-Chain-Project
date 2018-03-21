@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to Will Song’s usedcar_webapp’s documentation!22 &#8212; usedcar_webapp  documentation</title>
+    <title>Flask App &#8212; Usedcar_Webapp  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -27,7 +27,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="welcome to jingwei Song’s usedcar_webapp’s documentation!" href="tutorial.html" />
+    <link rel="next" title="Models" href="models.html" />
+    <link rel="prev" title="Welcome to Will Song’s Used Car Web App’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -43,18 +44,23 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-will-song-s-usedcar-webapp-s-documentation-22">
-<h1>Welcome to Will Song&#8217;s usedcar_webapp&#8217;s documentation!22<a class="headerlink" href="#welcome-to-will-song-s-usedcar-webapp-s-documentation-22" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
+  <div class="section" id="flask-app">
+<h1>Flask App<a class="headerlink" href="#flask-app" title="Permalink to this headline">¶</a></h1>
+<p>A Flask app that renders the html web page and incorporates the model results</p>
+<span class="target" id="module-web_app"></span><dl class="function">
+<dt id="web_app.model">
+<code class="descclassname">web_app.</code><code class="descname">model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/web_app.html#model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web_app.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the main function for the flask app.</p>
+<p>It first stores user inputs, loads the pre-stored pickle model file, and makes prediction.</p>
+<p>Finally it will refresh the page with the predicted price shown on the bottom.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="web_app.parser">
+<code class="descclassname">web_app.</code><code class="descname">parser</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/web_app.html#parser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#web_app.parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function renders the initial web page</p>
+</dd></dl>
+
 </div>
 
 
@@ -62,26 +68,19 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Welcome to Will Song&#8217;s usedcar_webapp&#8217;s documentation!22</a></li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-<div class="relations">
+        <div class="sphinxsidebarwrapper"><div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="tutorial.html">welcome to jingwei Song&#8217;s usedcar_webapp&#8217;s documentation!</a><ul>
-      <li>Previous: <a href="tutorial.html" title="previous chapter">welcome to jingwei Song&#8217;s usedcar_webapp&#8217;s documentation!</a></li>
-  </ul></li>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Will Song&#8217;s Used Car Web App&#8217;s documentation!</a></li>
+      <li>Next: <a href="models.html" title="next chapter">Models</a></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/code.rst.txt"
+      <li><a href="_sources/flask_app.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -107,7 +106,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
-      <a href="_sources/code.rst.txt"
+      <a href="_sources/flask_app.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

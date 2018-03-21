@@ -37,7 +37,3 @@ def initial_clean():
 	return 
 
 
-if __name__ == '__main__':
-	initial_clean()
-
-

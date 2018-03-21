@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>initial_cleaning &#8212; Usedcar_Webapp  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for initial_cleaning</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<div class="viewcode-block" id="initial_clean"><a class="viewcode-back" href="../models.html#initial_cleaning.initial_clean">[docs]</a><span class="k">def</span> <span class="nf">initial_clean</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;This function performs initial cleansing of the raw data and saves the new version used for training the model&quot;&quot;&quot;</span>
+
+	
+	<span class="c1"># 1. read in the original data and do some summary statistics</span>
+	<span class="c1"># Note: The original data need to be downloaded from kaggle. The link can be found under README.md in the root directory.</span>
+	<span class="n">car</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;used_cars.csv&#39;</span><span class="p">)</span>
+
+
+	<span class="c1"># 2. first manipulation of the data, taking out unusual mileage records and imputing NA&#39;s</span>
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;mileage&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;mileage&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;mileage&#39;</span><span class="p">]))</span>
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;engine_displacement&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;engine_displacement&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;engine_displacement&#39;</span><span class="p">]))</span>
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;engine_power&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;engine_power&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;engine_power&#39;</span><span class="p">]))</span>
+	<span class="n">car</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="n">car</span><span class="o">.</span><span class="n">mileage</span><span class="o">&lt;</span><span class="mi">1000000</span><span class="p">]</span>
+
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;door_count&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;door_count&#39;</span><span class="p">],</span><span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;seat_count&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;seat_count&#39;</span><span class="p">],</span><span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;door_count&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;door_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;door_count&#39;</span><span class="p">]))</span>
+	<span class="n">car</span><span class="p">[</span><span class="s1">&#39;seat_count&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;seat_count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">car</span><span class="p">[</span><span class="s1">&#39;seat_count&#39;</span><span class="p">]))</span>
+
+
+	<span class="c1"># 3. subset the data to get rid off weird values</span>
+	<span class="n">car</span><span class="o">=</span><span class="n">car</span><span class="p">[(</span><span class="n">car</span><span class="o">.</span><span class="n">seat_count</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">door_count</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">)]</span>
+	<span class="n">car</span><span class="o">=</span><span class="n">car</span><span class="p">[(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">manufacture_year</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">fuel_type</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">body_type</span><span class="p">))]</span>
+	<span class="n">car</span><span class="o">=</span><span class="n">car</span><span class="p">[</span><span class="n">car</span><span class="o">.</span><span class="n">manufacture_year</span><span class="o">&gt;</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">car</span><span class="o">.</span><span class="n">manufacture_year</span><span class="p">)]</span>
+
+
+	<span class="c1"># 4. now we have a total of about 470K cleaned data ==&gt; write out</span>
+	<span class="n">car</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;used_cars_new.csv&quot;</span><span class="p">)</span>
+	<span class="k">return</span> </div>
+
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Will Song.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

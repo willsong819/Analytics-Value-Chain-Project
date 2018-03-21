@@ -3,14 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Will Song's usedcar_webapp's documentation!
+Welcome to Will Song's Used Car Web App's documentation!
 ==========================================
 
 .. toctree::
-   :maxdepth: 12
+   :maxdepth: 2
    :caption: Contents:
 
-   
+   flask_app
+   models
 
 
 Indices and tables
