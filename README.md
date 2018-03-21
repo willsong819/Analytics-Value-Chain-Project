@@ -8,7 +8,7 @@ Deploy the app locally
 ------------
 ```
 # Set up a new virtual environment
-# Go to folder 'usedcar_webapp' and run
+# Go to folder 'usedcar_webapp/' and run
 > source ./py/bin/activate
 > conda create -n used_car_webapp python=3
 > source activate used_car_webapp
@@ -49,8 +49,8 @@ Project Organization
     │       └── training_model.py
     │   
     │
-    
-   
+
+
 Link to download the data
 ------------
 https://www.kaggle.com/mirosval/personal-cars-classifieds/data
@@ -58,5 +58,5 @@ https://www.kaggle.com/mirosval/personal-cars-classifieds/data
 
 Link to Pivotal Tracker
 ------------
-
+https://www.pivotaltracker.com/n/projects/2143346
 
